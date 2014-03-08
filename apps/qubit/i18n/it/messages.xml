@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
 <xliff version="1.0">
-  <file datatype="plaintext" date="2013-12-15T10:27:01Z" original="messages" product-name="messages" source-language="en" target-language="">
+  <file datatype="plaintext" date="2014-02-20T02:06:33Z" original="messages" product-name="messages" source-language="en" target-language="">
     <header/>
     <body>
       <trans-unit id="a5162e31ab7277f79bebcb03364debdf5c0913b8">
@@ -526,7 +526,7 @@
       </trans-unit>
       <trans-unit id="77dfd2135f4db726c47299bb55be26f7f4525a46">
         <source>Cancel</source>
-        <target>Cancella</target>
+        <target>Annulla</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/settings/templates/visibleElementsSuccess.php</note>
       </trans-unit>
       <trans-unit id="8c684290ce0b8a8e6cee79a145e17554064a4760">
@@ -1260,7 +1260,7 @@
       </trans-unit>
       <trans-unit id="0953760ce30d75c4960d0196dd2bc662bc621b79">
         <source>Inherit reference code (information object)</source>
-        <target>Eredita il codice di riferimento (oggetto informativo)</target>
+        <target>Eredita la segnatura (oggetto informativo)</target>
         <note>https://github.com/artefactual/atom/blob/master/lib/form/SettingsGlobalForm.class.php</note>
       </trans-unit>
       <trans-unit id="ecd08597c7210110e1383be5f0d26da21733fba0">
@@ -1615,7 +1615,7 @@
       </trans-unit>
       <trans-unit id="251006aa22cca67e85ec99139025f677599ff651">
         <source>Name access points</source>
-        <target>Punti d'accesso per nome</target>
+        <target>Chiavi d'accesso per nome</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/informationobject/templates/_nameAccessPoints.php</note>
       </trans-unit>
       <trans-unit id="41e610ea3f6a08f1de55d8da43d82bb1df35d3c0">
@@ -1835,7 +1835,7 @@
       </trans-unit>
       <trans-unit id="85d65391620ccbf91d7bc34498c6a4e851339288">
         <source>Place access points</source>
-        <target>Punti d'accesso per luogo</target>
+        <target>Chiavi d'accesso per luogo</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/informationobject/templates/_placeAccessPoints.php</note>
       </trans-unit>
       <trans-unit id="0cd3597453ab504a3dbeec3289e21abe922d223a">
@@ -1885,7 +1885,7 @@
       </trans-unit>
       <trans-unit id="9e7c0f331d3149e8c2fa3f12b58e6e7324415e5d">
         <source>Print preview</source>
-        <target>Stampa l'anteprima</target>
+        <target>Anteprima di stampa</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/informationobject/templates/itemListSuccess.php</note>
       </trans-unit>
       <trans-unit id="dcc7cfd66117ed7364a42a6cb744e5e2f24c6e1d">
@@ -1998,12 +1998,12 @@
       </trans-unit>
       <trans-unit id="b2acd6af73c4ceb26f6c5c2b296adafd8ee013d6">
         <source>Reference code</source>
-        <target>Codice di riferimento</target>
+        <target>Segnatura</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/informationobject/actions/itemListAction.class.php</note>
       </trans-unit>
       <trans-unit id="1b71aaeef4ba63eac38b64a29f4f2838bbdee13b">
         <source>Reference code separator</source>
-        <target>Separatore del codice di riferimento</target>
+        <target>Separatore della segnatura</target>
         <note>https://github.com/artefactual/atom/blob/master/lib/form/SettingsGlobalForm.class.php</note>
       </trans-unit>
       <trans-unit id="0f217179940c6d89f5cb2c7002a58d91ab7286c1">
@@ -2058,7 +2058,7 @@
       </trans-unit>
       <trans-unit id="88bc3fe3daddee139809d036f18b985fbe165957">
         <source>Reports</source>
-        <target>Rapporti</target>
+        <target>Stampe</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/informationobject/templates/fileListError.php</note>
       </trans-unit>
       <trans-unit id="312386841084261c610413fa4de8b7505f469407">
@@ -2327,7 +2327,7 @@
       </trans-unit>
       <trans-unit id="4b01785d3fafbbde8ea1df111484b4b88cae7a5d">
         <source>Showing %1% results</source>
-        <target>Risultati %1%</target>
+        <target>%1% risultati</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/informationobject/templates/browseSuccess.php</note>
       </trans-unit>
       <trans-unit id="623c933a9a953c9cd4b3587844a44a66ba9989b7">
@@ -2497,7 +2497,7 @@
       </trans-unit>
       <trans-unit id="43f229ce767bff78035c8e5a860a84802f657179">
         <source>Subject access points</source>
-        <target>Punti d'accesso per soggetto</target>
+        <target>Chiavi d'accesso per argomento</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/informationobject/templates/_subjectAccessPoints.php</note>
       </trans-unit>
       <trans-unit id="b3c916e3d09c351daa5121b47bb9deedcfcb8187">
@@ -2552,7 +2552,7 @@
       </trans-unit>
       <trans-unit id="4a8201c11ba306a8de15ea0851c8c7b51f49a5ce">
         <source>The character separating hierarchical elements in a reference code</source>
-        <target>Il carattere che separa gli elementi gerarchici in un codice di riferimento</target>
+        <target>Il carattere che separa gli elementi gerarchici in una segnatura</target>
         <note>https://github.com/artefactual/atom/blob/master/lib/form/SettingsGlobalForm.class.php</note>
       </trans-unit>
       <trans-unit id="4ecde563fe4e262de9e15f563e4f4e52fc5ff982">
@@ -2907,7 +2907,7 @@
       </trans-unit>
       <trans-unit id="e7670de2a94b451d420c1ebcfdf3c41045ee5d9b">
         <source>When set to &amp;quot;yes&amp;quot;, the reference code string will be built using the information object identifier plus the identifiers of all its ancestors</source>
-        <target>Se &#xE8; impostato su &amp;quot;s&#xEC;&amp;quot;, la stringa del codice di riferimento sar&#xE0; creata usando il codice identificativo dell'oggetto informativo pi&#xF9; i codici identificativi di tutti i suoi antenati</target>
+        <target>Se &#xE8; impostato su &amp;quot;s&#xEC;&amp;quot;, la stringa della segnatura sar&#xE0; creata usando il codice identificativo dell'oggetto informativo pi&#xF9; i codici identificativi di tutti i suoi antenati</target>
         <note>https://github.com/artefactual/atom/blob/master/lib/form/SettingsGlobalForm.class.php</note>
       </trans-unit>
       <trans-unit id="450eb999d939f385ebbc248d64e48e831757554f">

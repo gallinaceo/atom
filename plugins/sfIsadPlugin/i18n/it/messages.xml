@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
 <xliff version="1.0">
-  <file source-language="EN" target-language="it" datatype="plaintext" original="messages" date="2013-12-15T10:25:12Z" product-name="messages">
+  <file source-language="EN" target-language="it" datatype="plaintext" original="messages" date="2014-02-20T02:06:19Z" product-name="messages">
     <header/>
     <body>
       <trans-unit id="1">
@@ -190,11 +190,11 @@
       </trans-unit>
       <trans-unit id="50">
         <source>Access points</source>
-        <target>Punti di accesso</target>
+        <target>Chiavi di accesso</target>
       </trans-unit>
       <trans-unit id="51">
         <source>Edit access points</source>
-        <target>Modifica i punti d'accesso</target>
+        <target>Modifica le chiavi d'accesso</target>
       </trans-unit>
       <trans-unit id="52">
         <source>Description control area</source>
@@ -414,7 +414,7 @@
       </trans-unit>
       <trans-unit id="146">
         <source>Name access points (subjects)</source>
-        <target>Punti d'accesso per nome (soggetto)</target>
+        <target>Chiavi d'accesso per nome (soggetto)</target>
       </trans-unit>
       <trans-unit id="147">
         <source>Record the international, national and/or local rules or conventions followed in preparing the description. (ISAD 3.7.2)</source>
