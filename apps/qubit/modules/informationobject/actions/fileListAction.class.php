@@ -44,10 +44,11 @@ class InformationObjectFileListAction extends sfAction
           'startDate' => $this->context->i18n->__('Date (based on start date)')
         );
 
-        if ($this->getUser()->isAuthenticated())
-        {
-          $choices['locations'] = $this->context->i18n->__('Retrieval information');
-        }
+        //non usiamo questo criterio di ordinamento
+        //if ($this->getUser()->isAuthenticated())
+        //{
+          //$choices['locations'] = $this->context->i18n->__('Retrieval information');
+        //}
 
         $this->form->setDefault($name, 'referenceCode');
         $this->form->setValidator($name, new sfValidatorChoice(array('choices' => array_keys($choices))));
@@ -97,19 +98,20 @@ class InformationObjectFileListAction extends sfAction
 
   public function generateReport($request)
   {
+    //commento la query del lod perché dopo non lo uso più
     // Get "file" term in "level of description" taxonomy
-    $c2 = new Criteria;
-    $c2->addJoin(QubitTerm::ID, QubitTermI18n::ID, Criteria::INNER_JOIN);
-    $c2->add(QubitTermI18n::NAME, 'file');
-    $c2->add(QubitTermI18n::CULTURE, 'en');
-    $c2->add(QubitTerm::TAXONOMY_ID, QubitTaxonomy::LEVEL_OF_DESCRIPTION_ID);
+    //$c2 = new Criteria;
+    //$c2->addJoin(QubitTerm::ID, QubitTermI18n::ID, Criteria::INNER_JOIN);
+    //$c2->add(QubitTermI18n::NAME, 'file');
+    //$c2->add(QubitTermI18n::CULTURE, 'en');
+    //$c2->add(QubitTerm::TAXONOMY_ID, QubitTaxonomy::LEVEL_OF_DESCRIPTION_ID);
 
-    $lod = QubitTermI18n::getOne($c2);
+    //$lod = QubitTermI18n::getOne($c2);
 
-    if (null === $lod)
-    {
-      throw new sfException('Can\'t find "file" level of description in term table');
-    }
+    //if (null === $lod)
+    //{
+      //throw new sfException('Can\'t find "file" level of description in term table');
+    //}
 
     $criteria = new Criteria;
     $criteria->add(QubitInformationObject::LFT, $this->resource->lft, Criteria::GREATER_EQUAL);
@@ -125,8 +127,8 @@ class InformationObjectFileListAction extends sfAction
 
     foreach($informationObjects as $item)
     {
-      if ($lod->id == $item->levelOfDescriptionId)
-      {
+      //if ($lod->id == $item->levelOfDescriptionId)
+      //{
         $creationDates = self::getCreationDates($item);
         $parentTitle = QubitInformationObject::getStandardsBasedInstance($item->parent)->__toString();
 
@@ -137,11 +139,12 @@ class InformationObjectFileListAction extends sfAction
           'dates' => (isset($creationDates)) ? Qubit::renderDateStartEnd($creationDates->getDate(array('cultureFallback' => true)), $creationDates->startDate, $creationDates->endDate) : '&nbsp;',
           'startDate' => (isset($creationDates)) ? $creationDates->startDate : null,
           'accessConditions' => $item->getAccessConditions(array('cultureFallback' => true)),
-          'locations' => self::getLocationString($item)
+          'locations' => self::getLocationString($item),
+          'lod' => QubitTerm::getById($item->levelOfDescriptionId)
         );
 
         $this->resultCount++;
-      }
+      //}
     }
 
     // Sort items by selected criteria

@@ -7,8 +7,7 @@
 
 <?php $row = $startrow = 1; foreach ($results as $parent => $items): ?>
 
-  <h2 class="element-invisible"><?php echo __('%1% hierarchy', array('%1%' => sfConfig::get('app_ui_label_informationobject'))) ?></h2>
-  <div class="resource-hierarchy">
+  <div class="resource-hierarchy no-print">
     <ul>
     <?php foreach ($items[0]['resource']->getAncestors()->orderBy('lft') as $ancestor): ?>
       <?php if (QubitInformationObject::ROOT_ID != intval($ancestor->id)): ?>
@@ -21,35 +20,22 @@
   <table>
     <thead>
       <tr>
-        <th><?php echo __('#') ?></th>
+        <th><?php echo __('Level of description') ?></th>
         <th><?php echo __('Reference code') ?></th>
         <th><?php echo __('Title') ?></th>
-        <th><?php echo __('Dates') ?></th>
-        <th><?php echo __('Access restrictions') ?></th>
-      <?php if ($sf_user->isAuthenticated()): ?>
-        <th><?php echo __('Retrieval information') ?></th>
-      <?php endif; ?>
       </tr>
     </thead><tbody>
     <?php foreach ($items as $item): ?>
       <tr>
-        <td class="row-number"><?php echo $row++ ?></td>
+        <td><?php echo $item['lod'] ?></td>
         <td><?php echo $item['referenceCode'] ?></td>
         <td><?php echo $item['title'] ?></td>
-        <td><?php echo $item['dates'] ?></td>
-        <td><?php echo isset($item['accessConditions']) ? $item['accessConditions'] : __('None') ?></td>
-      <?php if ($sf_user->isAuthenticated()): ?>
-        <td><?php echo $item['locations'] ?></td>
-      <?php endif; ?>
       </tr>
     <?php endforeach; ?>
     </tbody>
   </table>
 
   <div class="result-count">
-    <?php echo __('Showing %1% to %2% of %3% results', array(
-      '%1%' => $startrow,
-      '%2%' => ($startrow += count($items)) - 1,
-      '%3%' => $resultCount)) ?>
+    <?php echo __('Showing %1% results', array('%1%' => count($items))) ?>
   </div>
 <?php endforeach; ?>

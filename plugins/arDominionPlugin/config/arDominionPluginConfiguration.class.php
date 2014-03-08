@@ -33,10 +33,12 @@ class arDominionPluginConfiguration extends sfPluginConfiguration
     {
       $context->response->addJavaScript('/vendor/less.js');
       $context->response->addStylesheet('/plugins/arDominionPlugin/css/main.less', 'last', array('rel' => 'stylesheet/less', 'type' => 'text/css'));
+      $context->response->addStylesheet('/css/print.css', 'last', array('media' => 'print', 'rel' => 'stylesheet', 'type' => 'text/css'));
     }
     else
     {
       $context->response->addStylesheet('/plugins/arDominionPlugin/css/min.css', 'last', array('media' => 'screen'));
+      $context->response->addStylesheet('/css/print.css', 'last', array('media' => 'print', 'rel' => 'stylesheet', 'type' => 'text/css'));
     }
   }
 

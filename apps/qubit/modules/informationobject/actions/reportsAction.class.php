@@ -36,7 +36,7 @@ class InformationObjectReportsAction extends sfAction
         {
           $choices = array(
             $this->context->routing->generate(null, array($this->resource, 'module' => 'informationobject', 'action' => 'fileList')) => $this->context->i18n->__('File list'),
-            $this->context->routing->generate(null, array($this->resource, 'module' => 'informationobject', 'action' => 'itemList')) => $this->context->i18n->__('Item list'),
+            //$this->context->routing->generate(null, array($this->resource, 'module' => 'informationobject', 'action' => 'itemList')) => $this->context->i18n->__('Item list'),
           );
         }
         else
@@ -44,11 +44,12 @@ class InformationObjectReportsAction extends sfAction
           $choices = array();
         }
 
-        if ($this->getUser()->isAuthenticated())
-        {
-          $choices[$this->context->routing->generate(null, array($this->resource, 'module' => 'informationobject', 'action' => 'storageLocations'))] = $this->context->i18n->__('Physical storage locations');
-          $choices[$this->context->routing->generate(null, array($this->resource, 'module' => 'informationobject', 'action' => 'boxLabelCsv'))] = $this->context->i18n->__('Box label CSV');
-        }
+        //non li usiamo
+        //if ($this->getUser()->isAuthenticated())
+        //{
+          //$choices[$this->context->routing->generate(null, array($this->resource, 'module' => 'informationobject', 'action' => 'storageLocations'))] = $this->context->i18n->__('Physical storage locations');
+          //$choices[$this->context->routing->generate(null, array($this->resource, 'module' => 'informationobject', 'action' => 'boxLabelCsv'))] = $this->context->i18n->__('Box label CSV');
+        //}
 
         $this->form->setDefault($name, $this->context->routing->generate(null, array($this->resource, 'module' => 'informationobject', 'action' => 'fileList')));
         $this->form->setValidator($name, new sfValidatorChoice(array('choices' => array_keys($choices))));
