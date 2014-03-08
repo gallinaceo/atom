@@ -316,14 +316,16 @@ class arElasticSearchInformationObjectPdo
       $refcode = '';
       if (isset($this->repository))
       {
-        if (null != $cc = $this->repository->getCountryCode(array('culture' => $this->__get('culture'))))
-        {
-          $refcode .= $cc.' ';
-        }
+	//non usiamo il country code nella segnatura
+        //if (null != $cc = $this->repository->getCountryCode(array('culture' => $this->__get('culture'))))
+        //{
+          //$refcode .= $cc.' ';
+        //}
 
         if (isset($this->repository->identifier))
         {
-          $refcode .= $this->repository->identifier.' ';
+          //cablo il nostro separatore dopo l'identificatore dell'Archivio
+          $refcode .= $this->repository->identifier.', ';
         }
       }
 
@@ -332,11 +334,14 @@ class arElasticSearchInformationObjectPdo
       {
         if (isset($item->identifier))
         {
-          $identifiers[] = $item->identifier;
+          //strip degli zero in testa al numero di corda; necessari per l'ordinamento 
+          $identifiers[] = ltrim($item->identifier, '0');
+          //$identifiers[] = $item->identifier;
         }
       }
 
-      $refcode .= implode(sfConfig::get('app_separator_character', '-'), $identifiers);
+      //non funziona il get config; cablo il nostro separatore
+      $refcode .= implode(sfConfig::get('app_separator_character', ', '), $identifiers);
     }
     else
     {
@@ -360,7 +365,6 @@ class arElasticSearchInformationObjectPdo
                     event.end_date,
                     event.actor_id,
                     event.type_id,
-                    event.source_culture,
                     i18n.date,
                     i18n.culture';
         $sql .= ' FROM '.QubitEvent::TABLE_NAME.' event';
@@ -383,7 +387,6 @@ class arElasticSearchInformationObjectPdo
           $event->end_date = $item['end_date'];
           $event->actor_id = $item['actor_id'];
           $event->type_id = $item['type_id'];
-          $event->source_culture = $item['source_culture'];
 
           $events[$item['id']] = $event;
         }
@@ -683,7 +686,7 @@ class arElasticSearchInformationObjectPdo
     self::$statements['materialType']->execute(array(
       $this->__get('id')));
 
-    return self::$statements['materialType']->fetchAll(PDO::FETCH_OBJ);
+    return self::$statements['materialType']->fetchColumn(0);
   }
 
   public function getStorageNames()
@@ -814,9 +817,9 @@ class arElasticSearchInformationObjectPdo
     }
 
     // Material type
-    foreach ($this->getMaterialTypeId() as $item)
+    if (null !== ($materialTypeId = $this->getMaterialTypeId))
     {
-      $serialized['materialTypeId'][] = $item->id;
+      $serialized['materialTypeId'] = $materialTypeId;
     }
 
     // Media
@@ -842,9 +845,10 @@ class arElasticSearchInformationObjectPdo
     }
 
     // Dates
-    foreach ($this->events as $event)
+    $dates = $this->getDates('array', sfConfig::get('sf_default_culture'));
+    if (0 < count($dates))
     {
-      $serialized['dates'][] = arElasticSearchEvent::serialize($event);
+      $serialized['dates'] = $dates;
     }
 
     // Transcript

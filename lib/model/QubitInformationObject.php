@@ -125,7 +125,9 @@ class QubitInformationObject extends BaseInformationObject
           {
             if (isset($item->identifier))
             {
-              $identifier[] = $item->identifier;
+              //strip degli zero in testa al numero di corda; necessari per l'ordinamento 
+              $identifier[] = ltrim($item->identifier, '0');
+              //$identifier[] = $item->identifier;
             }
 
             if (isset($item->repository))
@@ -137,17 +139,18 @@ class QubitInformationObject extends BaseInformationObject
 
           if (isset($repository->identifier))
           {
-            $identifier = "$repository->identifier $identifier";
+            $identifier = "$repository->identifier" . ', ' . "$identifier";
           }
 
-          if (isset($repository))
-          {
-            $countryCode = $repository->getCountryCode();
-            if (isset($countryCode))
-            {
-              $identifier = "$countryCode $identifier";
-            }
-          }
+	  //non usiamo il country code nella segnatura
+          //if (isset($repository))
+          //{
+            //$countryCode = $repository->getCountryCode();
+            //if (isset($countryCode))
+            //{
+              //$identifier = "$countryCode $identifier";
+            //}
+          //}
 
           return $identifier;
         }
