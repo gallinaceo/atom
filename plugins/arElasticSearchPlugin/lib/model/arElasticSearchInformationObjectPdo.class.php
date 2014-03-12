@@ -314,6 +314,7 @@ class arElasticSearchInformationObjectPdo
     if ('1' == sfConfig::get('app_inherit_code_informationobject', 1))
     {
       $refcode = '';
+      $this->getRepository();
       if (isset($this->repository))
       {
 	//non usiamo il country code nella segnatura
