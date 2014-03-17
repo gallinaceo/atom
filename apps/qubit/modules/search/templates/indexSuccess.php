@@ -56,6 +56,7 @@
 <?php slot('sidebar') ?>
   <section id="facets">
 
+<?php /*
     <?php echo get_partial('search/facetLanguage', array(
       'target' => '#facet-languages',
       'label' => __('Language'),
@@ -63,6 +64,7 @@
       'pager' => $pager,
       'filters' => $filters,
       'open' => true)) ?>
+*/ ?>
 
     <?php echo get_partial('search/facet', array(
       'target' => '#facet-levelOfDescription',
@@ -112,6 +114,7 @@
       'filters' => $filters,
       'open' => true)) ?>
 
+<?php /*
     <?php echo get_partial('search/facet', array(
       'target' => '#facet-mediaTypes',
       'label' => __('Media types'),
@@ -119,6 +122,7 @@
       'pager' => $pager,
       'filters' => $filters,
       'open' => true)) ?>
+*/ ?>
 
   </section>
 <?php end_slot() ?>
