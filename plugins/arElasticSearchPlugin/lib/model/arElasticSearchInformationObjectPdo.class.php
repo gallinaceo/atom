@@ -57,11 +57,8 @@ class arElasticSearchInformationObjectPdo
 
     $this->loadData($id, $options);
 
-    // Get inherited ancestors
-    if (isset($options['ancestors']))
-    {
-      $this->ancestors = $options['ancestors'];
-    }
+    //recupero sempre gli ancestors (forse non funziona più il setting sull'ereditarietà della segnatura)
+    $this->getAncestors();
 
     //recupero sempre il repository, proprio o ereditato 
     $this->getRepository();
