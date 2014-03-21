@@ -108,3 +108,16 @@
   </form>
 
 </div>
+
+<div class="list-menu open">
+  <div class="more">
+    <a href="<?php echo url_for(array(
+        'module' => 'informationobject', 
+        'action' => 'browse', 
+        'collection' => $resource->getCollectionRoot()->id 
+      )); ?>">
+      <i class="icon-search"></i>
+      <?php echo $this->context->i18n->__('Browse all descriptions'); ?>
+    </a>
+  </div>
+</div>

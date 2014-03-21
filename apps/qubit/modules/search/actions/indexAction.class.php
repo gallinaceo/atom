@@ -218,16 +218,16 @@ class SearchIndexAction extends DefaultBrowseAction
         $response['results'][] = $result;
       }
 
-      $url = url_for(array('module' => 'informationobject', 'action' => 'browse', 'collection' =>  $request->collection, 'query' => $request->query));
-      $link = $this->context->i18n->__('Browse all descriptions');
-      $response['more'] = <<<EOF
-<div class="more">
-  <a href="$url">
-    <i class="icon-search"></i>
-    $link
-  </a>
-</div>
-EOF;
+      //$url = url_for(array('module' => 'informationobject', 'action' => 'browse', 'collection' =>  $request->collection, 'query' => $request->query));
+      //$link = $this->context->i18n->__('Browse all descriptions');
+      //$response['more'] = <<<EOF
+//<div class="more">
+  //<a href="$url">
+    //<i class="icon-search"></i>
+    //$link
+  //</a>
+//</div>
+//EOF;
 
       $this->response->setHttpHeader('Content-Type', 'application/json; charset=utf-8');
 
