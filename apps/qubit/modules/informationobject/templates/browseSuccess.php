@@ -122,8 +122,9 @@
     <?php echo get_partial('default/sortPicker',
       array(
         'options' => array(
+          'alphabetic_ref' => __('Reference code'),
           'lastUpdated' => __('Most recent'),
-          'alphabetic' => __('Alphabetic')))) ?>
+          'alphabetic_title' => __('Title')))) ?>
 
   </section>
 
