@@ -207,8 +207,8 @@ class InformationObjectBrowseAction extends DefaultBrowseAction
         break;
 
       case 'alphabetic_ref':
-        //$this->query->setSort(array('identifier' => 'asc'));
-        $this->query->setSort(array('referenceCode' => 'asc'));
+        $this->query->setSort(array('identifier' => 'asc'));
+        //$this->query->setSort(array('referenceCode' => 'asc'));
 
         break;
 
