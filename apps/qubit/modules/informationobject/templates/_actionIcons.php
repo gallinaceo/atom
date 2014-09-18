@@ -1,8 +1,16 @@
 <section id="action-icons">
   <ul>
 
+<!--
     <li>
       <a href="<?php echo url_for(array($resource, 'module' => 'informationobject', 'action' => 'reports')) ?>">
+        <i class="icon-print"></i>
+        <?php echo __('Reports') ?>
+      </a>
+    </li>
+//-->
+    <li>
+      <a href="<?php echo ('http://' . gethostname() . ':3000/information_objects/show_tree/' . $resource->id) ?>" target="_blank">
         <i class="icon-print"></i>
         <?php echo __('Reports') ?>
       </a>
